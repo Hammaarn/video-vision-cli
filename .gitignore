@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local script state — by default lives at ~/.video-vision-cli/, not here,
+# but in case someone overrides VIDEO_VISION_HOME to the repo dir:
+.video-vision-cli/
+downloads/
+cache/
