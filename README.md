@@ -2,7 +2,7 @@
 
 Token-efficient video pre-pass for Claude Code. Send Claude a video URL the smart way: audio-first transcription + scene/silence detection, then drill specific frames *only* when visual proof is required. **30-50× cheaper than asking Claude to "watch the whole video" naively.**
 
-Designed for Claude Max plan users on Mac who want to point Claude at YouTube / Instagram / TikTok / local video files and get a clean structured analysis without burning tokens.
+Designed for Claude Code users (Max plan or API key) on Mac, Windows, or Linux who want to point Claude at YouTube / Instagram / TikTok / local video files and get a clean structured analysis without burning tokens.
 
 ---
 
@@ -169,8 +169,8 @@ python3 video_check.py cache clear            # nuke all caches
 
 ---
 
-## Source / credits
+## Credits
 
-- This script is a stripped, brother-friendly fork of [`mcp-skills-server/video_to_claude.py`](https://github.com/) — Erik Hammarn's internal token-efficiency wrapper for his Claude Code workflow. Erik's original retains panel-eval dispatching + Obsidian vault writes; this version drops both.
-- The actual video understanding lives in [`claude-video-vision`](https://github.com/jordanrendric/claude-video-vision) by Jordan Rendric. Without that plugin, the script is just a yt-dlp + ffprobe wrapper. Install it; that's where the magic is.
-- License: same as the upstream repo.
+- **The video-understanding engine is [`claude-video-vision`](https://github.com/jordanrendric/claude-video-vision) by Jordan Rendric.** That plugin does the real work — frame extraction, transcription, and the `video_analyze` / `video_detail` MCP tools Claude calls. Without it, this script is just a yt-dlp + ffprobe wrapper. Install it; that's where the magic is.
+- **What this repo adds** is a token-efficiency layer on top: an audio-first pre-pass that tells Claude which frames are worth a visual drill and which to skip — cutting token cost 30-50× versus naively "watching the whole video," while keeping the same understanding.
+- License: [MIT](LICENSE).

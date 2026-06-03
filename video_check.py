@@ -27,11 +27,13 @@ Modes:
     grift      Pre-pass + drill every scene change (claim-vs-evidence
                check; ads, sales pitches, "look at this" content)
 
-Requirements (Mac):
-    brew install yt-dlp ffmpeg python
-    claude plugin marketplace add https://github.com/jordanrendric/claude-video-vision.git
-    claude plugin install claude-video-vision
-    (Claude Code installed; Max plan or API key configured)
+Requirements:
+    yt-dlp + ffmpeg on PATH, Python 3.10+, Claude Code (Max plan or API key),
+    and Jordan Rendric's claude-video-vision plugin — the extraction engine
+    that actually watches the video (this script only decides what to extract):
+        claude plugin marketplace add https://github.com/jordanrendric/claude-video-vision.git
+        claude plugin install claude-video-vision
+    One-shot installers handle all of it — see install-mac.sh / install-windows.ps1.
 
 See README.md for full setup.
 """
